@@ -1,0 +1,102 @@
+/*Page Code*/
+:root {
+    --pixel-size: 6;
+ }
+ 
+ body {
+    background: bisque;
+ }
+
+ .home-header-title {
+   display: flex;
+   justify-content: space-around;
+ }
+
+ .home-pokemon-background {
+   background-image: url(/HTML/Projects/Project1/Images/Pokemon/backdrop1.jpg); 
+   background-size: cover;
+   width: 100%;
+   background-repeat: no-repeat;
+ }
+
+
+.seven h1 {
+   text-align: center;
+       font-size:30px; font-weight:300; color:#222; letter-spacing:1px;
+       text-transform: uppercase;
+   
+       display: grid;
+       grid-template-columns: 1fr max-content 1fr;
+       grid-template-rows: 27px 0;
+       grid-gap: 20px;
+       align-items: center;
+   }
+   
+   .seven h1:after,.seven h1:before {
+       content: " ";
+       display: block;
+       border-bottom: 1px solid #c50000;
+       border-top: 1px solid #c50000;
+       height: 5px;
+     background-color:#f8f8f8;
+   }
+
+   #mySidebar {
+      z-index:3;
+      width:300px; 
+      background-image: url(/HTML/Projects/Project1/Images/Pokemon/nav-background.jpg);
+      background-size: cover;
+   }
+
+   .hover-image:hover {
+      color: #111; 
+      box-shadow: 0 0 100px goldenrod;
+      border-radius: 40px;
+   }
+
+ /*Character Code*/
+ 
+ .Character {
+    width: calc(32px * var(--pixel-size));
+    height: calc(32px * var(--pixel-size));
+    overflow: hidden;
+    position: relative;
+    margin: 4em auto;
+ }
+ 
+ .Character_spritesheet {
+    animation: moveSpritesheet 1s steps(4) infinite;
+    width: calc(128px * var(--pixel-size));
+    position: absolute;
+    
+ }
+ .Character_shadow {
+    position: absolute;
+    width: calc(32px * var(--pixel-size));
+    height: calc(32px * var(--pixel-size));
+ }
+ 
+ .pixelart {
+    image-rendering: pixelated;
+ }
+ 
+ .face-right {
+    top: calc(-32px * var(--pixel-size));
+ }
+ .face-up {
+    top: calc(-64px * var(--pixel-size));
+ }
+ .face-left {
+    top: calc(-96px * var(--pixel-size));
+ }
+ 
+ 
+ @keyframes moveSpritesheet {
+    from {
+       transform: translate3d(0px,0,0)
+    }
+    to {
+       transform: translate3d(-100%,0,0)
+    }
+ }
+ 
