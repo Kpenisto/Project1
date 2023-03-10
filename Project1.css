@@ -15,7 +15,7 @@
 
  /*Pokemon Images Background*/
  .home-pokemon-background {
-   background-image: url(/Project1/Images/Pokemon/backdrop1.jpg); 
+   background-image: url(./Images/Pokemon/backdrop1.jpg); 
    background-size: cover;
    width: 100%;
    background-repeat: no-repeat;
@@ -47,7 +47,7 @@
 #mySidebar {
    z-index:3;
    width:300px; 
-   background-image: url(/Project1/Images/Pokemon/nav-background.jpg);
+   background-image: url(./Images/Pokemon/nav-background.jpg);
    background-size: cover;
 }
 
