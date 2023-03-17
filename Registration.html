@@ -66,42 +66,50 @@
 <div class="w3-container w3-padding-large w3-grey" style="background-color: #e0bcbc!important;">
     <h4 id="register"><b>Registration</b></h4>
     <hr class="w3-opacity">
-    <form action="/action_page.php" target="_blank">
+    <form action="./action_page.txt" target="_blank" id="registrationForm">
       <div class="w3-section">
         <label for="userName">User Name</label>
-        <input class="w3-input w3-border" type="text" name="userName" id="userName" required>
+        <input class="w3-input w3-border" type="text" name="userName" id="userName" min="6" max="50" required>
+        <span id="errUserName" class="hide errMessageBox">User Name must be between 6 and 50 characters.</span>
       </div>
       <div class="w3-section">
         <label for="password">Password</label>
-        <input class="w3-input w3-border" type="password" name="password" id="password" required>
+        <input class="w3-input w3-border" type="password" name="password" id="password" min="8" max="50" required>
+        <span id="errPassword" class="hide errMessageBox">Password must be between 8 and 50 characters.</span>
       </div>
       <div class="w3-section">
         <label for="repPassword">Repeat Password</label>
-        <input class="w3-input w3-border" type="password" name="repPassword" id="repPassword" required>
+        <input class="w3-input w3-border" type="password" name="repPassword" id="repPassword" min="8" max="50" required>
+        <span id="errRepPassword" class="hide errMessageBox">Passwords do not match</span>
       </div>
       <div class="w3-section">
         <label for="firstName">First Name</label>
-        <input class="w3-input w3-border" type="text" name="firstName" id="firstName">
+        <input class="w3-input w3-border" type="text" name="firstName" id="firstName" max="50" required>
+        <span id="errFirstName" class="hide errMessageBox">First Name is required and must be less than 50 characters.</span>
       </div>
       <div class="w3-section">
         <label for="lastName">Last Name</label>
-        <input class="w3-input w3-border" type="text" name="lastName" id="lastName">
+        <input class="w3-input w3-border" type="text" name="lastName" id="lastName" max="50" required>
+        <span id="errLastName" class="hide errMessageBox">Last Name is required and must be less than 50 characters.</span>
       </div>
       <div class="w3-section">
         <label for="addr1">Address Line 1</label>
-        <input class="w3-input w3-border" type="text" name="addr1" id="addr1">
+        <input class="w3-input w3-border" type="text" name="addr1" id="addr1" max="100" required>
+        <span id="errAddr1" class="hide errMessageBox">Address is required and must be less than 100 characters.</span>
       </div>
       <div class="w3-section">
         <label for="addr2">Address Line 2</label>
-        <input class="w3-input w3-border" type="text" name="addr2" id="addr2"  placeholder="Optional">
+        <input class="w3-input w3-border" type="text" name="addr2" id="addr2"  placeholder="Optional" max="100">
+        <span id="errAddr2" class="hide errMessageBox">Address 2 must be less than 100 characters.</span>
       </div>
       <div class="w3-section">
         <label for="city">City</label>
-        <input class="w3-input w3-border" type="text" name="city" id="city">
+        <input class="w3-input w3-border" type="text" name="city" id="city" max="50" required>
+        <span id="errCity" class="hide errMessageBox">City is required and must be less than 50 characters.</span>
       </div>
       <div class="w3-section">
         <label for="state">State</label>
-        <select name="state" id="state">
+        <select name="state" id="state" required>
             <option value="AL">Alabama</option>
             <option value="AK">Alaska</option>
             <option value="AZ">Arizona</option>
@@ -157,37 +165,40 @@
       </div>
       <div class="w3-section">
         <label for="zipcode">ZipCode</label>
-        <input class="w3-input w3-border" type="text" name="zipcode" id="zipcode"  placeholder="######">
+        <input class="w3-input w3-border" type="text" name="zipcode" id="zipcode"  placeholder="######" min="5" max="10" required>
+        <span id="errZipcode" class="hide errMessageBox">Zipcode must be between 5 or 9 characters</span>
       </div>
       <div class="w3-section">
         <label for="phoneNumber">Phone Number</label>
-        <input class="w3-input w3-border" type="text" name="phoneNumber" id="phoneNumber"  placeholder="(###-###-####)">
+        <input class="w3-input w3-border" type="text" name="phoneNumber" id="phoneNumber"  placeholder="(###-###-####)" max="12" required>
+        <span id="errPhoneNumber" class="hide errMessageBox">Phone Number must be less than 12 characters</span>      
       </div>
       <div class="w3-section">
         <label for="email">Email</label>
-        <input class="w3-input w3-border" type="email" name="email" id="email"  placeholder="123@abc.com">
+        <input class="w3-input w3-border" type="email" name="email" id="email"  placeholder="123@abc.com" required>
+        <span id="errEmail" class="hide errMessageBox">Email must match format "123@abc.com"</span>      
       </div>
       <div class="w3-section">GENDER: <br/>
             <label for="gender">Male</label>
-            <input class="w3-input w3-border" type="radio" name="gender" id="gender1">
+            <input class="w3-input w3-border" type="radio" name="gender" id="gender1" value="Male" required>
             <label for="gender">Female</label>
-            <input class="w3-input w3-border" type="radio" name="gender" id="gender2">
+            <input class="w3-input w3-border" type="radio" name="gender" id="gender2" value="Female">
             <label for="gender">Other</label>
-            <input class="w3-input w3-border" type="radio" name="gender" id="gender3">
+            <input class="w3-input w3-border" type="radio" name="gender" id="gender3" value="Other">
         </div>
       <div class="w3-section">Maritial Status: <br/>
         <label for="mStatus">Married</label>
-        <input class="w3-input w3-border" type="radio" name="mStatus" id="mStatus1">
+        <input class="w3-input w3-border" type="radio" name="mStatus" id="mStatus1" value="Married" required>
         <label for="mStatus">Divorced</label>
-        <input class="w3-input w3-border" type="radio" name="mStatus" id="mStatus2">
+        <input class="w3-input w3-border" type="radio" name="mStatus" id="mStatus2" value="Divorced">
         <label for="mStatus">Lucky</label>
-        <input class="w3-input w3-border" type="radio" name="mStatus" id="mStatus3">
+        <input class="w3-input w3-border" type="radio" name="mStatus" id="mStatus3" value="Lucky">
       </div>
       <div class="w3-section">
         <label for="dob">Date of Birth</label>
-        <input class="w3-input w3-border" type="date" name="dob" id="dob">
+        <input class="w3-input w3-border" type="date" name="dob" id="dob" required>
       </div>
-      <button type="submit" class="w3-button w3-black w3-margin-bottom" id="submitButton"><i
+      <button type="submit" class="w3-button w3-black w3-margin-bottom" id="submitButton" disabled><i
           class="fa fa-paper-plane w3-margin-right"></i>Submit</button>
         <button type="reset" class="w3-button w3-black w3-margin-bottom" id="resetButton"><i
             class="fa fa-paper-plane w3-margin-right"></i>Reset</button>
@@ -250,6 +261,252 @@
       document.getElementById("mySidebar").style.display = "none";
       document.getElementById("myOverlay").style.display = "none";
     }
+
+     //Validate UserName
+     document.getElementById("userName").addEventListener("focusout", function(event){
+      let userInput = event.srcElement.value
+
+      if (userInput.length < 50 && userInput.length > 6) {
+        event.srcElement.classList.remove("errorBox")
+
+        event.srcElement.classList.add("successBox")
+        document.getElementById("errUserName").classList.add("hide")
+      } else {
+        event.srcElement.classList.remove("successBox")
+
+        event.srcElement.classList.add("errorBox")
+        document.getElementById("errUserName").classList.remove("hide")
+      }
+
+    });   
+
+    //Validate Password Complexity
+    document.getElementById("password").addEventListener("focusout", function(event){
+      let strongPassword = new RegExp('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})')
+
+      if (strongPassword.test(event.target.value)) {
+        event.srcElement.classList.remove("errorBox")
+
+        event.srcElement.classList.add("successBox")
+        document.getElementById("errPassword").classList.add("hide")
+      } else {
+        event.srcElement.classList.remove("successBox")
+
+        event.srcElement.classList.add("errorBox")
+        document.getElementById("errPassword").classList.remove("hide")
+      }
+
+    });
+
+    //Validate Repeat Password
+    document.getElementById("repPassword").addEventListener("focusout", function(event){
+      let strongPassword = new RegExp('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})')
+      let repPassword = event.target.value;
+      let origPassword = document.getElementById("password").value
+
+      if (repPassword == origPassword && strongPassword.test(event.target.value)) {
+        event.srcElement.classList.remove("errorBox")
+
+        event.srcElement.classList.add("successBox")
+        document.getElementById("errRepPassword").classList.add("hide")
+      } else {
+        event.srcElement.classList.remove("successBox")
+
+        event.srcElement.classList.add("errorBox")
+        document.getElementById("errRepPassword").classList.remove("hide")
+      }
+
+    });
+
+    //Validate FirstName
+    document.getElementById("firstName").addEventListener("focusout", function(event){
+      let userInput = event.srcElement.value
+
+      if (userInput.length < 50 && userInput.length != 0) {
+        event.srcElement.classList.remove("errorBox")
+
+        event.srcElement.classList.add("successBox")
+        document.getElementById("errFirstName").classList.add("hide")
+      } else {
+        event.srcElement.classList.remove("successBox")
+
+        event.srcElement.classList.add("errorBox")
+        document.getElementById("errFirstName").classList.remove("hide")
+      }
+
+    });   
+
+    //Validate LastName
+    document.getElementById("lastName").addEventListener("focusout", function(event){
+      let userInput = event.srcElement.value
+
+      if (userInput.length < 50 && userInput.length != 0) {
+        event.srcElement.classList.remove("errorBox")
+
+        event.srcElement.classList.add("successBox")
+        document.getElementById("errLastName").classList.add("hide")
+      } else {
+        event.srcElement.classList.remove("successBox")
+
+        event.srcElement.classList.add("errorBox")
+        document.getElementById("errLastName").classList.remove("hide")
+      }
+
+    }); 
+
+    //Validate Addr1
+    document.getElementById("addr1").addEventListener("focusout", function(event){
+      let userInput = event.srcElement.value
+
+      if (userInput.length < 100 && userInput.length != 0) {
+        event.srcElement.classList.remove("errorBox")
+
+        event.srcElement.classList.add("successBox")
+        document.getElementById("errAddr1").classList.add("hide")
+      } else {
+        event.srcElement.classList.remove("successBox")
+
+        event.srcElement.classList.add("errorBox")
+        document.getElementById("errAddr1").classList.remove("hide")
+      }
+
+    }); 
+
+    //Validate Addr2
+    document.getElementById("addr2").addEventListener("focusout", function(event){
+      let userInput = event.srcElement.value
+
+      if (userInput.length < 100) {
+        event.srcElement.classList.remove("errorBox")
+
+        event.srcElement.classList.add("successBox")
+        document.getElementById("errAddr2").classList.add("hide")
+      } else {
+        event.srcElement.classList.remove("successBox")
+
+        event.srcElement.classList.add("errorBox")
+        document.getElementById("errAddr2").classList.remove("hide")
+      }
+
+    });
+
+    //Validate City
+    document.getElementById("city").addEventListener("focusout", function(event){
+      let userInput = event.srcElement.value
+
+      if (userInput.length < 50 && userInput.length != 0) {
+        event.srcElement.classList.remove("errorBox")
+
+        event.srcElement.classList.add("successBox")
+        document.getElementById("errCity").classList.add("hide")
+      } else {
+        event.srcElement.classList.remove("successBox")
+
+        event.srcElement.classList.add("errorBox")
+        document.getElementById("errCity").classList.remove("hide")
+      }
+
+    }); 
+
+    //Validate Zipcode
+    document.getElementById("zipcode").addEventListener("focusout", function(event){
+      let isValidZip = /(^\d{5}$)|(^\d{5}\d{4}$)|(^\d{5}-\d{4}$)/.test(event.target.value);
+
+      if (isValidZip) {
+        let longZip = event.target.value.length
+        event.srcElement.classList.remove("errorBox")
+
+        event.srcElement.classList.add("successBox")
+        document.getElementById("errZipcode").classList.add("hide")
+
+        if (longZip == 9) {
+          let first = event.target.value.slice(0, 5)
+          let last = event.target.value.slice(5, 9)
+          let returnValue = first + '-' + last
+          event.target.value = returnValue
+        }
+      } else {
+        event.srcElement.classList.remove("successBox")
+
+        event.srcElement.classList.add("errorBox")
+        document.getElementById("errZipcode").classList.remove("hide")
+      }
+
+    });
+
+    //Validate PhoneNumber
+    document.getElementById("phoneNumber").addEventListener("focusout", function(event){
+      let str = event.target.value
+      let cleaned = ('' + str).replace(/\D/g, '');
+      
+      //Check if the input is of correct length
+      let match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
+      if (match) {
+        let returnValue = '(' + match[1] + ')-' + match[2] + '-' + match[3]
+        event.target.value = returnValue
+
+        event.srcElement.classList.remove("errorBox")
+        event.srcElement.classList.add("successBox")
+        document.getElementById("errPhoneNumber").classList.add("hide")
+      } else{
+        event.srcElement.classList.remove("successBox")
+
+        event.srcElement.classList.add("errorBox")
+        document.getElementById("errPhoneNumber").classList.remove("hide")        
+      }
+    });
+
+    //Validate Email
+    document.getElementById("email").addEventListener("focusout", function(event){
+      let userInput = event.srcElement.value
+      let isValid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(userInput)
+
+      if (isValid) {
+        event.srcElement.classList.remove("errorBox")
+
+        event.srcElement.classList.add("successBox")
+        document.getElementById("errEmail").classList.add("hide")
+      } else {
+        event.srcElement.classList.remove("successBox")
+
+        event.srcElement.classList.add("errorBox")
+        document.getElementById("errEmail").classList.remove("hide")
+      }
+
+    });
+
+    //Set up listener to remove disabled attr
+    //A better way to validate would be to create an object and validate against the object's data
+    //We can manipulate the dom and hack the "successBox" attribute to enable the submit button 
+    //but then the built in HTML form validation will catch issues so it works for this purpose.
+    //That is why I only selected the Input boxes since the radios would be handled by built in features.
+    setInterval(listener, 10000);
+
+    function listener() {
+      let submitButton = document.getElementById("submitButton")
+      let isValid = false
+
+      let success = document.querySelectorAll('.successBox')
+
+      if (success.length >= 10) {
+        submitButton.disabled = false
+        return true
+      } else {
+        submitButton.disabled = true
+        return false
+      }
+    }
+
+    document.getElementById("submitButton").addEventListener("click", function(event){
+      let validation = listener()
+
+      if (validation) {
+        console.log("Submit successful! Push data to server")
+      } else {
+        event.preventDefault()
+      }
+    });
+  
   </script>
 
   </body>
