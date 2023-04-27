@@ -37,11 +37,11 @@
       <p class="w3-text-grey">Made by Kyle Peniston</p>
     </div>
     <div class="w3-bar-block">
-      <a href="./Project1.html" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i
+      <a href="./Project1.php" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i
         class="fa fa-th-large fa-fw w3-margin-right"></i>Home</a>
-      <a href="./Registration.html" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i
+      <a href="./Registration.php" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i
           class="fa fa-envelope fa-fw w3-margin-right"></i>Registration</a>
-      <a href="./Animation.html" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i
+      <a href="./Animation.php" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i
           class="fa fa-envelope fa-fw w3-margin-right"></i>Animation</a>
   </div>
   </nav>
